@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Query and Display</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Query Information</h2>
+      <form>
+        <div class="form-group">
+          <label for="narfcn">NARFCN:</label>
+          <input type="text" class="form-control" id="narfcn" placeholder="Enter NARFCN">
+        </div>
+        <div class="form-group">
+          <label for="pci">PCI:</label>
+          <input type="text" class="form-control" id="pci" placeholder="Enter PCI">
+        </div>
+        <div class="form-group">
+          <label for="band">Band:</label>
+          <input type="text" class="form-control" id="band" placeholder="Enter Band">
+        </div>
+        <div class="form-group">
+          <label for="sim_index">SIM Index:</label>
+          <input type="text" class="form-control" id="sim_index" placeholder="Enter SIM Index">
+        </div>
+        <div class="form-group">
+          <label for="start_time">Start Time:</label>
+          <input type="datetime-local" class="form-control" id="start_time">
+        </div>
+        <div class="form-group">
+          <label for="end_time">End Time:</label>
+          <input type="datetime-local" class="form-control" id="end_time">
+        </div>
+        <button type="submit" class="btn btn-primary">Query</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h2>Information Display</h2>
+      <div id="infoDisplay"></div>
+    </div>
+  </div>
+  
+  <div class="row mt-5">
+    <div class="col">
+      <h2>Recommended Replies</h2>
+      <div contenteditable="true" id="recommendedReplies">
+        <!-- Your HTML template for recommended replies goes here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  // JavaScript code for handling form submission and displaying information
+  $(document).ready(function() {
+    $('form').submit(function(e) {
+      e.preventDefault();
+      var narfcn = $('#narfcn').val();
+      var pci = $('#pci').val();
+      var band = $('#band').val();
+      var sim_index = $('#sim_index').val();
+      var start_time = $('#start_time').val();
+      var end_time = $('#end_time').val();
+      
+      // Here you can make an AJAX request to send this data to your backend for processing
+      
+      // For now, let's just display the input values
+      $('#infoDisplay').html('<p><strong>NARFCN:</strong> ' + narfcn + '</p>' +
+                            '<p><strong>PCI:</strong> ' + pci + '</p>' +
+                            '<p><strong>Band:</strong> ' + band + '</p>' +
+                            '<p><strong>SIM Index:</strong> ' + sim_index + '</p>' +
+                            '<p><strong>Start Time:</strong> ' + start_time + '</p>' +
+                            '<p><strong>End Time:</strong> ' + end_time + '</p>');
+    });
+  });
+</script>
+
+</body>
+</html>

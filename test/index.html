@@ -1,0 +1,86 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Query Information</h2>
+                <form id="queryForm">
+                    <div class="form-group">
+                        <label for="narfcn">Narfcn</label>
+                        <input type="text" class="form-control" id="narfcn">
+                        <div class="recommendations" id="narfcnRecommendations"></div>
+                    </div>
+                    <!-- Similar fields for pci, band, sim_index, and time period -->
+                    <div class="form-group">
+                        <label for="narfcn">NARFCN:</label>
+                        <input type="text" class="form-control" id="narfcn" placeholder="Enter NARFCN">
+                      </div>
+                      <div class="form-group">
+                        <label for="pci">PCI:</label>
+                        <input type="text" class="form-control" id="pci" placeholder="Enter PCI">
+                      </div>
+                      <div class="form-group">
+                        <label for="band">Band:</label>
+                        <input type="text" class="form-control" id="band" placeholder="Enter Band">
+                      </div>
+                      <div class="form-group">
+                        <label for="sim_index">SIM Index:</label>
+                        <input type="text" class="form-control" id="sim_index" placeholder="Enter SIM Index">
+                      </div>
+              
+                    <!-- Dual-head bar for time period -->
+                    <div class="form-group">
+                        <label for="startTime">Start Time</label>
+                        <input type="text" class="form-control" id="startTimeInput">
+                        <div id="startTimeSlider"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime">End Time</label>
+                        <input type="text" class="form-control" id="endTimeInput">
+                        <div id="endTimeSlider"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Information Display</h2>
+                <div id="informationDisplay"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Canvas Space</h2>
+                <div id="canvasSpace"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Recommended Replies</h2>
+                <div id="recommendedReplies" contenteditable="true"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
